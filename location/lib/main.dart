@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telephony/telephony.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +15,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  MyHomePage({super.key});
 
-  final String title;
+  final Telephony telephony = Telephony.instance;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
